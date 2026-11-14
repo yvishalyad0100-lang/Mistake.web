@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JEE Mistake Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+
+<header class="top">
+  <div class="brand">
+    <div class="logo">M</div>
+    <div>
+      <h1>JEE Mistake Tracker</h1>
+      <p>Your personal error notebook</p>
+    </div>
+  </div>
+  <div class="save" id="saveStatus">● Saved locally</div>
+</header>
+
+<section class="hero">
+  <div class="eyebrow">LEARN · ANALYSE · IMPROVE</div>
+  <h2>Turn every mistake into progress.</h2>
+  <p>Store question screenshots, write the concept, and revisit your weak areas.</p>
+</section>
+
+<nav class="nav">
+  <button class="active" data-section="tests">
+    <span class="nicon">📝</span>
+    <strong>Test Mistakes</strong>
+    <small>Test-wise questions & scores</small>
+  </button>
+  <button data-section="modules">
+    <span class="nicon">📚</span>
+    <strong>Module Mistakes</strong>
+    <small>Chapter-wise practice errors</small>
+  </button>
+  <button data-section="race">
+    <span class="nicon">🎯</span>
+    <strong>Race Mistakes</strong>
+    <small>Track questions to revisit</small>
+  </button>
+</nav>
+
+<section id="testsView" class="view">
+  <div class="panel" id="testCreate">
+    <div class="panel-head">
+      <h3>Create a test record</h3>
+      <span class="small">TEST MISTAKES</span>
+    </div>
+    <div class="formgrid">
+      <div class="field">
+        <label for="testName">TEST NAME</label>
+        <input id="testName" placeholder="e.g. Part Test 04">
+      </div>
+      <div class="field">
+        <label for="testScore">SCORE</label>
+        <input id="testScore" placeholder="e.g. 142 / 300">
+      </div>
+    </div>
+    <button class="btn primary" id="createTest">＋ Create test page</button>
+  </div>
+
+  <div class="panel">
+    <div class="panel-head">
+      <h3>Your tests</h3>
+      <span class="small" id="testCount">0 tests</span>
+    </div>
+    <div id="testList" class="list"></div>
+  </div>
+  <div id="testDetail" class="panel hidden"></div>
+</section>
+
+<section id="modulesView" class="view hidden">
+  <div class="panel">
+    <div class="panel-head">
+      <div>
+        <h3>Module mistakes</h3>
+        <div class="small">Choose a subject, then open or add a chapter.</div>
+      </div>
+    </div>
+    <div class="subject-tabs" id="moduleTabs"></div>
+    <div id="moduleContent"></div>
+  </div>
+</section>
+
+<section id="raceView" class="view hidden">
+  <div class="panel">
+    <div class="panel-head">
+      <div>
+        <h3>Race mistakes</h3>
+        <div class="small">A separate chapter-wise space for questions you want to revisit.</div>
+      </div>
+    </div>
+    <div class="subject-tabs" id="raceTabs"></div>
+    <div id="raceContent"></div>
+  </div>
+</section>
+
+<div class="footer">
+  Your records are stored in this browser on this device.
+</div>
+
+</main>
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
